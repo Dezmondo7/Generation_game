@@ -91,9 +91,21 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {  
-  prompt('Please enter yes if you would like to generate a random passowrd');
+  
+  prompt('');
 }
 getPasswordOptions()
+
+
+// Creating an Obect to store all the functions
+const randFunc = {
+  special: genRandom,
+  number: genNumbers,
+  lower: genLower,
+  upper: genUpper,
+}
+
+//
 
 // Function for getting a random element from an array
 function genRandom(specialCharacters) {
@@ -114,7 +126,6 @@ function genLower(lowerCasedCharacters) {
 console.log(genLower(lowerCasedCharacters));
 
 //function to generate a random Uppercase
-
 function genUpper(upperCasedCharacters) {
   return upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
 }
@@ -122,8 +133,10 @@ console.log(genUpper(upperCasedCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
-
-
+  var results = '';
+  var passwordLength = window.prompt(
+    "How long would you like your password to be?"
+  )
 }
 
 // Get references to the #generate element
