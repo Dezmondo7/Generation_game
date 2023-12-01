@@ -1,7 +1,5 @@
 // Array of special characters to be included in password
 
-//var generateBtn = document.querySelector('#generate');
-
 var specialCharacters = [
   '@',
   '%',
@@ -97,29 +95,26 @@ function genRandom(specialCharacters) {
 }
 console.log(genRandom(specialCharacters));
 
-//Function to generate a random number
 function genNumbers(numericCharacters) {
   return numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
 }
 console.log(genNumbers(numericCharacters));
 
-//function to generate a random lowerCase
 function genLower(lowerCasedCharacters) {
   return lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)];
 }
 console.log(genLower(lowerCasedCharacters));
 
-//function to generate a random Uppercase
 function genUpper(upperCasedCharacters) {
   return upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
 }
 console.log(genUpper(upperCasedCharacters));
 
-// Function to generate password with user input
+
 function generatePassword() {
   var results = "";
   var passwordLength = window.prompt(
-    "How long would you like your password to be?"
+    "Choose how long would you like your password to be using numbers from 8 - 128?"
   );
 
   var charNo = parseInt(passwordLength);
@@ -149,13 +144,13 @@ function generatePassword() {
 
     var answers = [] 
 
-      if (specialChoice === true) answers.push(specialCharacters);
+      if (specialChoice === true) answers.push(...specialCharacters);
 
-      if (numberChoice === true) answers.push(numericCharacters);
+      if (numberChoice === true) answers.push(...numericCharacters);
 
-      if (lowerChoice === true) answers.push(lowerCasedCharacters);
+      if (lowerChoice === true) answers.push(...lowerCasedCharacters);
 
-      if (capitalChoice === true) answers.push(upperCasedCharacters);
+      if (capitalChoice === true) answers.push(...upperCasedCharacters);
 
       if (lowerCasedCharacters || upperCasedCharacters || numericCharacters || specialCharacters) {
 
@@ -165,7 +160,7 @@ function generatePassword() {
 
      } else {
         window.alert(
-          "A minumum of one selection must be confirmed(ok)"
+          "A minumum of one selection must be entered"
         )
         return generatePassword()
         }
