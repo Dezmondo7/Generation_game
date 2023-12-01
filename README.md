@@ -14,9 +14,10 @@ Numeric Characters
 
 Once the user has input all of data a Random Password is generated. 
 
-The link to the URL is here 
+The link to the URL is here https://dezmondo7.github.io/generation_Game/ 
 Below is the final version of the completed version.
 
 ![Alt text](psgen.png)
+
 
 
