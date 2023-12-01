@@ -1,4 +1,7 @@
 // Array of special characters to be included in password
+
+//var generateBtn = document.querySelector('#generate');
+
 var specialCharacters = [
   '@',
   '%',
@@ -88,16 +91,6 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-// Function to prompt user for password options
-function getPasswordOptions() {  
-  
-  prompt('');
-}
-getPasswordOptions()
-
-//
-
 // Function for getting a random element from an array
 function genRandom(specialCharacters) {
   return specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
@@ -124,7 +117,7 @@ console.log(genUpper(upperCasedCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
-  var results = '';
+  var results = "";
   var passwordLength = window.prompt(
     "How long would you like your password to be?"
   );
@@ -132,6 +125,7 @@ function generatePassword() {
   var charNo = parseInt(passwordLength);
 
   if (charNo > 7 && charNo < 129) {
+
     var specialChoice = window.confirm(
       "Do you want to use special characters in your password?"
     )
@@ -142,32 +136,33 @@ function generatePassword() {
 
     var lowerChoice = window.confirm(
       "Do you want to use non capital letters in your password?"
-    )
+    );
 
     var capitalChoice = window.confirm(
       "Do you want to use capital letters in your password?"
-    ) 
+    ); 
 
    } else {  
     window.alert("This is an invalid selection please log a number from between 8 and 128");
     return generatePassword();
   }
-}
 
     var answers = [] 
 
-      if (specialChoice === true) answers.push(...specialCharacters);
+      if (specialChoice === true) answers.push(specialCharacters);
 
-      if (numberChoiceChoice === true) answers.push(...numericCharacters);
+      if (numberChoice === true) answers.push(numericCharacters);
 
-      if (lowerChoiceChoice === true) answers.push(...lowerCasedCharacters);
+      if (lowerChoice === true) answers.push(lowerCasedCharacters);
 
-      if (specialChoice === true) answers.push(...upperCasedCharacters);
+      if (capitalChoice === true) answers.push(upperCasedCharacters);
 
       if (lowerCasedCharacters || upperCasedCharacters || numericCharacters || specialCharacters) {
-      for ( var i = 0; i < charNo; i++) {
-      results += answers[Math.floor(Math.random()*answers.length)]
+
+      for (var i = 0; i < charNo; i++) {
+      results += answers[Math.floor(Math.random()*answers.length)];
       }
+
      } else {
         window.alert(
           "A minumum of one selection must be confirmed(ok)"
@@ -175,7 +170,7 @@ function generatePassword() {
         return generatePassword()
         }
         return results;
-      
+      }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
