@@ -88,18 +88,41 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
 
+// Function to prompt user for password options
+function getPasswordOptions() {  
+  prompt('Please enter yes if you would like to generate a random passowrd');
 }
+getPasswordOptions()
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
+function genRandom(specialCharacters) {
+  return specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
 }
+console.log(genRandom(specialCharacters));
+
+//Function to generate a random number
+function genNumbers(numericCharacters) {
+  return numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
+}
+console.log(genNumbers(numericCharacters));
+
+//function to generate a random lowerCase
+function genLower(lowerCasedCharacters) {
+  return lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)];
+}
+console.log(genLower(lowerCasedCharacters));
+
+//function to generate a random Uppercase
+
+function genUpper(upperCasedCharacters) {
+  return upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
+}
+console.log(genUpper(upperCasedCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
+
 
 }
 
@@ -116,3 +139,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
