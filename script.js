@@ -96,15 +96,6 @@ function getPasswordOptions() {
 }
 getPasswordOptions()
 
-
-// Creating an Obect to store all the functions
-const randFunc = {
-  special: genRandom,
-  number: genNumbers,
-  lower: genLower,
-  upper: genUpper,
-}
-
 //
 
 // Function for getting a random element from an array
@@ -136,8 +127,55 @@ function generatePassword() {
   var results = '';
   var passwordLength = window.prompt(
     "How long would you like your password to be?"
-  )
+  );
+
+  var charNo = parseInt(passwordLength);
+
+  if (charNo > 7 && charNo < 129) {
+    var specialChoice = window.confirm(
+      "Do you want to use special characters in your password?"
+    )
+
+    var numberChoice = window.confirm(
+      "Do you want to use numbers in your password?"
+    )
+
+    var lowerChoice = window.confirm(
+      "Do you want to use non capital letters in your password?"
+    )
+
+    var capitalChoice = window.confirm(
+      "Do you want to use capital letters in your password?"
+    ) 
+
+   } else {  
+    window.alert("This is an invalid selection please log a number from between 8 and 128");
+    return generatePassword();
+  }
 }
+
+    var answers = [] 
+
+      if (specialChoice === true) answers.push(...specialCharacters);
+
+      if (numberChoiceChoice === true) answers.push(...numericCharacters);
+
+      if (lowerChoiceChoice === true) answers.push(...lowerCasedCharacters);
+
+      if (specialChoice === true) answers.push(...upperCasedCharacters);
+
+      if (lowerCasedCharacters || upperCasedCharacters || numericCharacters || specialCharacters) {
+      for ( var i = 0; i < charNo; i++) {
+      results += answers[Math.floor(Math.random()*answers.length)]
+      }
+     } else {
+        window.alert(
+          "A minumum of one selection must be confirmed(ok)"
+        )
+        return generatePassword()
+        }
+        return results;
+      
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
