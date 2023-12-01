@@ -17,6 +17,6 @@ Once the user has input all of data a Random Password is generated.
 The link to the URL is here 
 Below is the final version of the completed version.
 
-
+![Alt text](psgen.png)
 
 
